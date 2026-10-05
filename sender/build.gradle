@@ -29,7 +29,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    namespace 'otus.gpb.homework.activities.receiver'
+    namespace 'otus.gpb.homework.activities.sender'
     buildFeatures {
         viewBinding true
     }

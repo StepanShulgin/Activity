@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sender</string>
+    <string name="to_google_maps">To Google Maps</string>
+    <string name="send_email">Send Email</string>
+    <string name="open_receiver">Open Receiver</string>
+    <string name="send_email_chooser_title">Выберите почтовый клиент</string>
 </resources>
