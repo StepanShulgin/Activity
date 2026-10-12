@@ -126,6 +126,12 @@ class EditProfileActivity : AppCompatActivity() {
                 addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
             }
         }
+        val target = intent.resolveActivity(packageManager)
+        if (target == null) {
+            Toast.makeText(this, R.string.telegram_unavailable, Toast.LENGTH_LONG).show()
+            return
+        }
+        intent.component = target
         try {
             startActivity(intent)
         } catch (_: ActivityNotFoundException) {
