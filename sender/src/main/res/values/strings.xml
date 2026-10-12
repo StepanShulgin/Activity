@@ -4,4 +4,5 @@
     <string name="send_email">Send Email</string>
     <string name="open_receiver">Open Receiver</string>
     <string name="send_email_chooser_title">Выберите почтовый клиент</string>
+    <string name="handler_unavailable">Приложение для этого действия не установлено</string>
 </resources>

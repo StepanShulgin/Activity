@@ -1,9 +1,11 @@
 package otus.gpb.homework.activities.sender
 
 import android.content.ComponentName
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import otus.gpb.homework.activities.sender.databinding.ActivitySenderBinding
 
@@ -27,7 +29,7 @@ class SenderActivity : AppCompatActivity() {
                 "com.google.android.maps.MapsActivity"
             )
         }
-        startActivity(intent)
+        launchSafely(intent)
     }
 
     private fun sendEmail() {
@@ -35,7 +37,7 @@ class SenderActivity : AppCompatActivity() {
             putExtra(Intent.EXTRA_SUBJECT, "Вопрос по Android-разработке")
             putExtra(Intent.EXTRA_TEXT, "Здравствуйте! Подскажите, пожалуйста, где найти материалы курса?")
         }
-        startActivity(Intent.createChooser(intent, getString(R.string.send_email_chooser_title)))
+        launchSafely(Intent.createChooser(intent, getString(R.string.send_email_chooser_title)))
     }
 
     private fun openReceiver() {
@@ -51,7 +53,15 @@ class SenderActivity : AppCompatActivity() {
             putExtra(EXTRA_YEAR, payload.year)
             putExtra(EXTRA_DESCRIPTION, payload.description)
         }
-        startActivity(intent)
+        launchSafely(intent)
+    }
+
+    private fun launchSafely(intent: Intent) {
+        try {
+            startActivity(intent)
+        } catch (_: ActivityNotFoundException) {
+            Toast.makeText(this, R.string.handler_unavailable, Toast.LENGTH_LONG).show()
+        }
     }
 
     private companion object {
