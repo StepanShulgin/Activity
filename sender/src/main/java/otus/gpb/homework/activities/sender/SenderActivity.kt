@@ -44,7 +44,7 @@ class SenderActivity : AppCompatActivity() {
         val payload = Payload(
             title = "Славные парни",
             year = "2016",
-            description = "Наемный охранник и частный детектив расследуют исчезновение девушки."
+            description = getString(R.string.movie_description_nice_guys)
         )
         val intent = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
