@@ -13,4 +13,6 @@
     <string name="surname">Фамилия</string>
     <string name="age">Возраст</string>
     <string name="apply">Применить</string>
+    <string name="choose_photo_before_sending">Сначала выберите фото из галереи</string>
+    <string name="telegram_unavailable">Для отправки установите Telegram</string>
 </resources>
