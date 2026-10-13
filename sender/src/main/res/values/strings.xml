@@ -4,6 +4,8 @@
     <string name="send_email">Send Email</string>
     <string name="open_receiver">Open Receiver</string>
     <string name="send_email_chooser_title">Выберите почтовый клиент</string>
+    <string name="email_subject">Вопрос по Android-разработке</string>
+    <string name="email_body">Здравствуйте! Подскажите, пожалуйста, где найти материалы курса?</string>
     <string name="handler_unavailable">Приложение для этого действия не установлено</string>
     <string name="movie_description_nice_guys">Что бывает, когда напарником брутального костолома становится субтильный лопух? Наемный охранник Джексон Хили и частный детектив Холланд Марч вынуждены работать в паре, чтобы распутать плевое дело о пропавшей девушке, которое оборачивается преступлением века. Смогут ли парни разгадать сложный ребус, если у каждого из них – свои, весьма индивидуальные методы.</string>
 </resources>

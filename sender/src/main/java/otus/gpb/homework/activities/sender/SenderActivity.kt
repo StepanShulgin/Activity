@@ -33,10 +33,11 @@ class SenderActivity : AppCompatActivity() {
     }
 
     private fun sendEmail() {
-        val intent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:android@otus.ru")).apply {
-            putExtra(Intent.EXTRA_SUBJECT, "Вопрос по Android-разработке")
-            putExtra(Intent.EXTRA_TEXT, "Здравствуйте! Подскажите, пожалуйста, где найти материалы курса?")
-        }
+        val intent = createEmailIntent(
+            recipient = "android@otus.ru",
+            subject = getString(R.string.email_subject),
+            body = getString(R.string.email_body)
+        )
         launchSafely(Intent.createChooser(intent, getString(R.string.send_email_chooser_title)))
     }
 
