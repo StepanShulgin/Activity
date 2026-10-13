@@ -14,6 +14,12 @@ class FillFormActivity : AppCompatActivity() {
         binding = ActivityFillFormBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if (savedInstanceState == null) {
+            binding.nameEditText.setText(intent.getStringExtra(ProfileExtras.NAME).orEmpty())
+            binding.surnameEditText.setText(intent.getStringExtra(ProfileExtras.SURNAME).orEmpty())
+            binding.ageEditText.setText(intent.getStringExtra(ProfileExtras.AGE).orEmpty())
+        }
+
         binding.applyButton.setOnClickListener {
             val result = Intent().apply {
                 putExtra(ProfileExtras.NAME, binding.nameEditText.text.toString())

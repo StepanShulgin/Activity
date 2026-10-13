@@ -79,7 +79,12 @@ class EditProfileActivity : AppCompatActivity() {
         }
         binding.imageviewPhoto.setOnClickListener { showPhotoActionDialog() }
         binding.buttonEditProfile.setOnClickListener {
-            editProfileLauncher.launch(Intent(this, FillFormActivity::class.java))
+            val intent = Intent(this, FillFormActivity::class.java).apply {
+                putExtra(ProfileExtras.NAME, binding.textviewName.text.toString())
+                putExtra(ProfileExtras.SURNAME, binding.textviewSurname.text.toString())
+                putExtra(ProfileExtras.AGE, binding.textviewAge.text.toString())
+            }
+            editProfileLauncher.launch(intent)
         }
     }
 
